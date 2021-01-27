@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+
+  img(src='https://lh3.googleusercontent.com/proxy/-SU72lwhqtCMG5wgltePfu6OYLhOEnmNwYgrJ0J61cy9DhZKOVdSM09SRu2EoaTXH57mDcDi-Okl8G2pR8YIQtqf60gYlMys74m_UUPhwCeoK16_A9JjHmsnQzTKEDtbi0r9AKwdnOCJ34urmilXIjtB25nD')
+
+  p
+  
+  ul
+    each val in show_list
+      li
+        a(href=val.url) #{val.title}, #{val.start_date_formatted} - #{val.end_date_formatted}
+
+    else
+      li There are no shows in this bar.

@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 #{title}
+
+  p Вы бронируете #{table.number} столик
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='booked_date') На какую дату забронировать
+      input#booked_date.form-control(type='date' name='booked_date' value=(undefined===table ? '' : table.booked_date) )
+      label(for='name') Ваше имя
+      input#name.form-control(type='text' placeholder='Иван' name='name' required='true')
+      label(for='phone') Номер телефона
+      input#phone.form-control(type='text' placeholder='+7(900)123-445-67' name='phone' required='true')
+    button.btn.btn-primary(type='submit') Забронировать
+
+  if errors
+   ul
+    for error in errors
+     li!= error.msg

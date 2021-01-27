@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+
+  img(src='https://doublebar.ru/pub/5/photos/476/h500.jpg')
+  p
+  ul
+    each val in table_list
+      li
+        a(href=val.url) #{val.number} стол на #{val.capacity} персон(ы)
+
+    else
+      li There are no authors.

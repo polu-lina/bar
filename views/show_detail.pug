@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1 #{title}
+
+  p #[strong Описание:] #{show.description}
+  p #[strong Начало:] #{show.start_date_formatted}
+  p #[strong Конец:] #{show.end_date_formatted}
